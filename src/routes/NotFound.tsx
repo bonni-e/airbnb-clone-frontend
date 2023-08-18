@@ -8,7 +8,7 @@ export default function NotFound() {
             <Heading>Page not Found.</Heading>
             <Text>It seems that you're lost.</Text>
             <Link to={"/"}>
-                <Button variant={"solid"} colorScheme="linkedin">Go Home</Button>
+                <Button variant={"solid"} colorScheme="red">Go Home</Button>
             </Link>
         </VStack>
     );
