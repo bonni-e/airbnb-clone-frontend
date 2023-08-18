@@ -29,7 +29,7 @@ export default function Room() {
 
             </Box>
             <Box p={2}>
-                <HStack gap={0.5} mb={"1"}>
+                <HStack gap={0.5} mb={"1"} h={"5"}>
                     <Text px={0.5} fontSize={"2xs"} color={"white"} bg={"teal.300"} width={"fit-content"} borderRadius={"sm"}>NEW</Text>
                     <Text px={0.5} fontSize={"2xs"} color={"white"} bg={"red.300"} width={"fit-content"} borderRadius={"sm"}>HOT</Text>
                 </HStack>

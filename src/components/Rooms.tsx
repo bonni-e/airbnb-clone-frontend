@@ -1,5 +1,6 @@
-import { Box, Center, Grid, HStack, Heading, IconButton, Image, Text } from "@chakra-ui/react";
+import { Grid } from "@chakra-ui/react";
 import Room from "./Room";
+import RoomLoading from "./RoomLoading";
 
 export default function Rooms() {
     return (
@@ -15,9 +16,11 @@ export default function Rooms() {
                 "2xl": "repeat(8, 1fr)",
             }
         } columnGap={4} rowGap={8}>
-            {[1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(index =>
+            {[1, 2, 3, 1].map(index =>
                 <Room />
             )}
+
+            <RoomLoading />
         </Grid>
     );
 }
