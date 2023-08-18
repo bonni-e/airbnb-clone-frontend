@@ -3,5 +3,3 @@
 ### skills
 - React 
 - Typescript
-- Chakra UI
-- 
