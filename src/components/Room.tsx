@@ -2,7 +2,18 @@ import { Box, Center, HStack, Heading, IconButton, Image, Text } from "@chakra-u
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs"
 import { PiHeartStraightFill, PiHeart } from "react-icons/pi"
 
-export default function Room() {
+// 인터페이스임을 의미하는 대문자 I를 붙여줌 
+interface IRoomProps { 
+    imageUrl:string; 
+    name:string; 
+    city:string;
+    country:string;
+    price:number;
+    rating:number;
+    reviewCount: number;
+}
+
+export default function Room({imageUrl, name, city, country, price, rating, reviewCount}:IRoomProps) {
     return (
         <Box h={"fit-content"} borderWidth={"thin"} borderRadius={
             {
@@ -20,7 +31,7 @@ export default function Room() {
                         "2xl": "8vw"
                     }
                 } >
-                    <Image src="https://a0.muscache.com/im/pictures/miso/Hosting-668146487515150072/original/8ff2a532-e0cd-41a2-9164-554c4d9eb28a.jpeg?im_w=720" fit={"cover"} />
+                    <Image src={imageUrl} fit={"cover"} />
                 </Center>
 
                 <Box position={"absolute"} top={0} right={0} textColor={"white"} cursor={"pointer"}>
@@ -33,18 +44,18 @@ export default function Room() {
                     <Text px={0.5} fontSize={"2xs"} color={"white"} bg={"teal.300"} width={"fit-content"} borderRadius={"sm"}>NEW</Text>
                     <Text px={0.5} fontSize={"2xs"} color={"white"} bg={"red.300"} width={"fit-content"} borderRadius={"sm"}>HOT</Text>
                 </HStack>
-                <Heading fontSize={"sm"} noOfLines={1}>Modern home in city center in the heart of</Heading>
-                <Text fontSize={"xs"} color={"gray"}>Seoul, S.Korea</Text>
-                <Text fontSize={"xs"}><b>$</b> <b>1,900.00</b> / <span>wk</span></Text>
+                <Heading fontSize={"sm"} noOfLines={1}>{name}</Heading>
+                <Text fontSize={"xs"} color={"gray"}>{city}, {country}</Text>
+                <Text fontSize={"xs"}><b>$</b> <b>{price}</b> / <span>wk</span></Text>
                 <HStack mt="1.5">
-                    <HStack fontSize={"xs"} textColor={"teal.400"} gap={0.5}>
+                    <HStack fontSize={"xs"} textColor={"teal.400"} gap={0.5}> 
                         <BsStarFill />
                         <BsStarFill />
                         <BsStarFill />
                         <BsStarHalf />
                         <BsStar />
                     </HStack>
-                    <Text fontSize={"xs"} color="gray"><span>88</span> reviews</Text>
+                    <Text fontSize={"xs"} color="gray"><span>{reviewCount}</span> reviews</Text>
                 </HStack>
             </Box>
         </Box>
